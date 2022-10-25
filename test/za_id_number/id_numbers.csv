@@ -1,0 +1,2 @@
+today, id_number, gender, age, date_of_birth, citizen_status, error
+2022-01-15,12334,,,,,Invalid ID Number format
