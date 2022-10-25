@@ -5,44 +5,6 @@ defmodule ZaIdNumber.LuhnTest do
 
   alias ZaIdNumber.Luhn
 
-  describe "generate/2" do
-    test "short number checks out for correct check digit" do
-      num = Luhn.generate("111", 4)
-
-      assert Luhn.valid?(num)
-      assert num == "1115"
-    end
-
-    test "test number checks out for correct check digit" do
-      num = Luhn.generate("7992739871", 11)
-
-      assert Luhn.valid?("79927398713")
-      assert num == "79927398713"
-    end
-
-    test "med number checks out for correct check digit" do
-      num = Luhn.generate("1111", 5)
-
-      assert Luhn.valid?(num)
-      assert num == "11114"
-    end
-
-    test "sanity" do
-      num = "12366871878426738395611668379747109"
-
-      assert Luhn.valid?(num)
-    end
-
-    test "long number checks out" do
-      for length <- 10..100 do
-        num = Luhn.generate("1236", length)
-
-        assert Luhn.valid?(num)
-        assert String.length(num) == length
-      end
-    end
-  end
-
   describe "valid?" do
     test "me" do
       assert Luhn.valid?("79927398713")
