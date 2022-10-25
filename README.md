@@ -1,11 +1,8 @@
-# ZaIdNumber
+# ZA Id Number 
 
-**TODO: Add description**
+Validates South African ID Numbers.
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `za_id_number` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +12,8 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/za_id_number>.
+## Usage
 
+```elixir
+ZaIdNumber.validate("12345")
+```
