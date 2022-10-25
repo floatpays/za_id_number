@@ -5,28 +5,6 @@ defmodule ZaIdNumber.Luhn do
   Reference: https://en.wikipedia.org/wiki/Luhn_algorithm
   """
 
-  def generate(prefix, length) do
-    prefix_nums = reverse_digits(prefix)
-
-    digits = random_digits(length - 1 - Enum.count(prefix_nums)) ++ prefix_nums
-
-    # 0 the last digit as a placeholder for the calculation
-    checksum =
-      [0 | digits]
-      |> double_even()
-      |> sum_digits()
-
-    [rem(checksum * 9, 10) | digits]
-    |> Enum.reverse()
-    |> Enum.join()
-  end
-
-  defp random_digits(length) when length > 0 do
-    for _ <- 1..length, do: :rand.uniform(9)
-  end
-
-  defp random_digits(_), do: []
-
   def valid?(number) when is_binary(number) do
     checksum =
       number
