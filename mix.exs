@@ -7,6 +7,8 @@ defmodule ZaIdNumber.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
       deps: deps()
     ]
   end
@@ -23,5 +25,18 @@ defmodule ZaIdNumber.MixProject do
     [
       {:nimble_parsec, "~> 1.2"}
     ]
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Wilhelm H Kirschbaum"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/floatpays/za_id_number"}
+    ]
+  end
+
+  defp description do
+    "Validates South African ID Numbers."
   end
 end
