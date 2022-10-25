@@ -3,6 +3,6 @@ defmodule ZaIdNumberTest do
   doctest ZaIdNumber
 
   test "greets the world" do
-    assert ZaIdNumber.hello() == :world
+    assert ZaIdNumber.validate("1234") == {:error, "Invalid ID Number format"}
   end
 end

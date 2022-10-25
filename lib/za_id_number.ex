@@ -8,11 +8,9 @@ defmodule ZaIdNumber do
 
   ## Examples
 
-      iex> ZaIdNumber.hello()
-      :world
+      iex> ZaIdNumber.validate("12345")
+      {:error, "Invalid ID Number format"}
 
   """
-  def hello do
-    :world
-  end
+  defdelegate validate(id_number, opts \\ []), to: ZaIdNumber.Validator
 end
