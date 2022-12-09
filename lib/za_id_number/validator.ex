@@ -40,6 +40,10 @@ defmodule ZaIdNumber.Validator do
   """
   @spec validate(id_number :: binary(), opts :: keyword()) ::
           {:ok, result()} | {:error, binary()}
+  def validate(value, opts \\ [])
+
+  def validate(nil, _opts), do: {:error, "Invalid ID Number format"}
+
   def validate(value, opts) do
     today = Keyword.get(opts, :today, Date.utc_today())
 

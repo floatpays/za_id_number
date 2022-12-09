@@ -5,6 +5,14 @@ defmodule ZaIdNumber.ValidatorTest do
 
   @external_resource ids_path = Path.join([__DIR__, "id_numbers.csv"])
 
+  test "handle nil" do
+    assert Validator.validate(nil) == {:error, "Invalid ID Number format"}
+  end
+
+  test "default options" do
+    assert Validator.validate("8401") == {:error, "Invalid ID Number format"}
+  end
+
   for line <- File.stream!(ids_path, [], :line) do
     [today, id_number, gender, age, date_of_birth, citizen_status, error] =
       String.split(line, ",") |> Enum.map(&String.trim/1)
