@@ -4,7 +4,7 @@ defmodule ZaIdNumber do
   """
 
   @doc """
-  Hello world.
+  ZaIdNumber validates and retrieves South African ID Number data
 
   ## Examples
 
