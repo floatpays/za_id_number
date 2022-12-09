@@ -6,7 +6,6 @@ defmodule ZaIdNumber.MixProject do
       app: :za_id_number,
       version: "0.1.0",
       elixir: "~> 1.14",
-      start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
       deps: deps()
@@ -23,7 +22,8 @@ defmodule ZaIdNumber.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:nimble_parsec, "~> 1.2"}
+      {:nimble_parsec, "~> 1.2"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
