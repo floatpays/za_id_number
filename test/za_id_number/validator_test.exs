@@ -1,5 +1,5 @@
 defmodule ZaIdNumber.ValidatorTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias ZaIdNumber.Validator
 
@@ -7,6 +7,10 @@ defmodule ZaIdNumber.ValidatorTest do
 
   test "handle nil" do
     assert Validator.validate(nil) == {:error, "Invalid ID Number format"}
+  end
+
+  test "handle integer" do
+    assert Validator.validate(123.12) == {:error, "Invalid ID Number format"}
   end
 
   test "default options" do

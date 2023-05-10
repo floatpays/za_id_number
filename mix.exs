@@ -4,7 +4,7 @@ defmodule ZaIdNumber.MixProject do
   def project do
     [
       app: :za_id_number,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.14",
       description: description(),
       package: package(),
@@ -15,7 +15,7 @@ defmodule ZaIdNumber.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
     ]
   end
 
@@ -23,7 +23,8 @@ defmodule ZaIdNumber.MixProject do
   defp deps do
     [
       {:nimble_parsec, "~> 1.2"},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:credo, "~> 1.4", only: [:dev], runtime: false}
     ]
   end
 
