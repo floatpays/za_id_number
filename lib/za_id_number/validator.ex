@@ -42,9 +42,7 @@ defmodule ZaIdNumber.Validator do
           {:ok, result()} | {:error, binary()}
   def validate(value, opts \\ [])
 
-  def validate(nil, _opts), do: {:error, "Invalid ID Number format"}
-
-  def validate(value, opts) do
+  def validate(value, opts) when is_binary(value) do
     today = Keyword.get(opts, :today, Date.utc_today())
 
     case parse(value) do
@@ -70,6 +68,8 @@ defmodule ZaIdNumber.Validator do
         {:error, "Invalid ID Number format"}
     end
   end
+
+  def validate(_value, _opts), do: {:error, "Invalid ID Number format"}
 
   defp calculate_luhn(value) do
     if Luhn.valid?(value) do
