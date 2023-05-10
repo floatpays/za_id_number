@@ -26,6 +26,7 @@ defmodule ZaIdNumber.Validator do
     |> integer(1)
     |> integer(1)
     |> integer(1)
+    |> eos()
   )
 
   @type result :: %{

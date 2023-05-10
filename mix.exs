@@ -1,10 +1,12 @@
 defmodule ZaIdNumber.MixProject do
   use Mix.Project
 
+  @version "0.1.2"
+
   def project do
     [
       app: :za_id_number,
-      version: "0.1.1",
+      version: @version,
       elixir: "~> 1.14",
       description: description(),
       package: package(),
