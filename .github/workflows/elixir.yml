@@ -14,16 +14,13 @@ on:
 permissions:
   contents: read
 
-strategy:
-  matrix:
-    elixir: [1.14.4]
-    otp: [24.2, 25.2]
-
 jobs:
-  Test:
-    name: Build and test
+  test:
+    strategy:
+      matrix:
+        elixir: [1.14.4]
+        otp: [24.2, 25.2]
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Elixir
