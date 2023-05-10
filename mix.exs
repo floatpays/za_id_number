@@ -25,8 +25,10 @@ defmodule ZaIdNumber.MixProject do
   defp deps do
     [
       {:nimble_parsec, "~> 1.2"},
+
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:credo, "~> 1.4", only: [:dev], runtime: false}
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.3", only: [:dev, :test], runtime: false}
     ]
   end
 
