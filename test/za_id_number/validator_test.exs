@@ -13,6 +13,11 @@ defmodule ZaIdNumber.ValidatorTest do
     assert Validator.validate(123.12) == {:error, "Invalid ID Number format"}
   end
 
+  test "handle non textual integers" do
+    assert Validator.validate("8401111111111.00") ==
+             {:error, "Invalid ID Number format"}
+  end
+
   test "default options" do
     assert Validator.validate("8401") == {:error, "Invalid ID Number format"}
   end
