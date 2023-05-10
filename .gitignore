@@ -24,3 +24,4 @@ za_id_number-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+/.elixir-tools/

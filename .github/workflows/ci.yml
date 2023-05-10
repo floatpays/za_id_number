@@ -15,17 +15,19 @@ permissions:
   contents: read
 
 jobs:
-  Test:
-    name: Build and test
+  test:
+    strategy:
+      matrix:
+        elixir: [1.14.4, 1.15.4]
+        otp: [24.2, 25.2, 26]
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Elixir
       uses: erlef/setup-beam@v1
       with:
-        elixir-version: '1.14.3' # Define the elixir version [required]
-        otp-version: '24.2' # Define the OTP version [required]
+        elixir-version: ${{ matrix.elixir }}
+        otp-version: ${{ matrix.otp }}
     - name: Restore dependencies cache
       uses: actions/cache@v3
       with:
@@ -36,7 +38,9 @@ jobs:
       run: mix deps.get
     - name: Run tests
       run: mix test
+    - name: Check Formatting
+      run: mix format --check-formatted      
     - name: Run Credo
-      run: mix credo
+      run: mix credo --strict
     - name: Run Dialyzer
       run: mix dialyzer
