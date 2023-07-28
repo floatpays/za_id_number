@@ -4,7 +4,7 @@ defmodule ZaIdNumber.MixProject do
   def project do
     [
       app: :za_id_number,
-      version: "0.1.4",
+      version: "1.0.0",
       elixir: "~> 1.14",
       description: description(),
       package: package(),
