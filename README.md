@@ -15,7 +15,18 @@ end
 ## Usage
 
 ```elixir
-ZaIdNumber.validate("12345")
+iex> ZaIdNumber.validate("12345")
+{:error, "Invalid ID Number format"}
+
+iex> ZaIdNumber.validate("[valid id number]")
+{:ok, %{
+   gender: :male | :female,
+   age: pos_integer(),
+   date_of_birth: Date.t(),
+   citizen_status: :born_citizen | :permanent_resident
+  }
+}
+
 ```
 
 ## Development
