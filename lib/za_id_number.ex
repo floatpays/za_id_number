@@ -3,6 +3,8 @@ defmodule ZaIdNumber do
   Documentation for `ZaIdNumber`.
   """
 
+  @spec validate(binary, keyword) ::
+          {:ok, ZaIdNumber.Validator.result()} | {:error, binary()}
   @doc """
   ZaIdNumber validates and retrieves South African ID Number data
 

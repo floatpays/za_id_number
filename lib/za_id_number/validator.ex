@@ -31,7 +31,7 @@ defmodule ZaIdNumber.Validator do
 
   @type result :: %{
           gender: :female | :male,
-          age: number(),
+          age: pos_integer(),
           date_of_birth: Date.t(),
           citizen_status: :born_citizen | :permanent_resident
         }
