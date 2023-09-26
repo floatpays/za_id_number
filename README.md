@@ -7,7 +7,7 @@ Validates South African ID Numbers.
 ```elixir
 def deps do
   [
-    {:za_id_number, "~> 0.1.0"}
+    {:za_id_number, "~> 1.0.0"}
   ]
 end
 ```
