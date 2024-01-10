@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/floatpays/za_id_number/compare/v1.0.0...v1.1.0) (2024-01-10)
+
+
+### Features
+
+* make validate/2 typespec more specific ([2bce1fc](https://github.com/floatpays/za_id_number/commit/2bce1fcbcce413ff6286e3d5aaeac89aa18c36a8))
+
 ## 1.0.0 (2023-07-28)
 
 
