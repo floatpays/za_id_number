@@ -37,7 +37,12 @@ defmodule ZaIdNumber.ValidatorTest do
 
           {
             :ok,
-            %{gender: gender, age: age, date_of_birth: dob, citizen_status: status}
+            %{
+              gender: gender,
+              age: age,
+              date_of_birth: dob,
+              citizen_status: status
+            }
           } ->
             assert to_string(gender) == unquote(gender)
             assert to_string(age) == unquote(age)
