@@ -1,6 +1,6 @@
 defmodule ZaIdNumber.Luhn do
   @moduledoc """
-  Luhn algorith for validation.
+  Luhn algorithm for validation.
 
   Reference: https://en.wikipedia.org/wiki/Luhn_algorithm
   """

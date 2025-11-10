@@ -62,7 +62,6 @@ defmodule ZaIdNumber.Validator do
            }}
         else
           {:error, error} -> {:error, error}
-          _ -> {:error, "Invalid ID Number format"}
         end
 
       {:error, _, _, _, _, _} ->

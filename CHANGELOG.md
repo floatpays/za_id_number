@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.1] (2025-11-10)
+
+### Bug Fixes
+
+* remove unreachable pattern match in validator causing Dialyzer warning
+* fix typo in Luhn module documentation ("algorith" -> "algorithm")
+
+### Documentation
+
+* update README with correct version number (1.1 instead of 1.0.0)
+* add detailed South African ID number format explanation
+* add real working example instead of placeholder
+* document all error messages returned by validator
+* add usage example with optional `today:` parameter
+* improve development section with code quality commands
+
 ## [1.1.0](https://github.com/floatpays/za_id_number/compare/v1.0.0...v1.1.0) (2024-01-10)
 
 
